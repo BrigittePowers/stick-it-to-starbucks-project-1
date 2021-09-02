@@ -1,56 +1,49 @@
-
 // user loads the page
 
-// FIRST TIME USER - modal pops up explaining purpose of site and How-To
+// banner header at top of page is STATIC and remains visible throughout site navigation
 
 // Local store data to confirm RETURNING USER from now on
+    // if user is FIRST TIME USER
+        // display modal explaining purpose
+        // mark user as RETURNING USER once modal is closed
 
-// RETURNING USER - modal does NOT display
+    // else user is RETURNING USER
+        // modal will not display for RETURNING USER
 
-// input fields are preset with last saved zip and distance (if applicable)
+// user sees a button/link to go to favorite list
 
-// zip code required
+// dynamic display landing page
+    // form
+        // text input zip code
+        // dropdown distance options
+        // submit button performs SEARCH
+            // check that zip code was input
+                // if zip code is input, record input + distance selection
+                // if zip code is undefined, highlight input red and inform user REQUIRED
+            // inputs are locally stored for RETURNING USER
+    // form answers pull from local storage if RETURNING USER to show last search options selected
+    // form answers default to placeholder-zip (Zip code needed...) and middle distance dropdown option 
 
-// if user doesn't enter zip code but presses SEARCH btn, highlight zip code input red
-
-// default distance x miles (distance optional) -- or dropdown box
-
-// if there is no recent search, input fields display placeholder text
-
-// user can see banner with our logo 
-
-// user can see a search form asking for their zip code and distance willing to travel [2 inputs]
-
-// user can see a SEARCH button to confirm inputs and perform the search
-
-// when user types in input fields... 
-
-// locally store their zip and distance preference 
-
-// user presses SEARCH 
-
-// clear dynamic elements 
-
-// create elements for...
-
-// ...map, 
-
-// ...and results page
-
-// page shows top three results for local coffee shops within user prefered distance (top 3 based on distance)
-
-// geolocate the user with Google API
-
-// Input user search in SERP API
-
-// pull and display data from top three searches
+// Once SEARCH is performed
+    // remove dynamic landing page elements
+    // create dynamic search page elements
+        // show map showing pins for top 3 search results (closest by distance)
+        // show list of 3 results
+            
 
 // when user clicks result
-
-// user can pin or star search results that will be locally stored for later viewing
-
-// user will be shown embedded map direction information / link to that coffee shop's website
+    // clicking an icon (fontawesome? star) allows the user to save the result to a favorites list (user feedback: icon changes color)
+    // user will be shown embedded map direction information 
+    // link to that coffee shop's data
+        // name
+        // website or menu link
+        // address
+        // hours
+        // price (?)
 
 // back button to return to results
 
 // below the 3 viewable results will be a link to the google search on google.com to view full results
+
+//TODO geolocate the user with Google API
+//TODO Input user search in SERP API
