@@ -1,6 +1,12 @@
 
 // user loads the page
 
+// FIRST TIME USER - modal pops up explaining purpose of site and How-To
+
+// Local store data to confirm RETURNING USER from now on
+
+// RETURNING USER - modal does NOT display
+
 // input fields are preset with last saved zip and distance (if applicable)
 
 // zip code required
