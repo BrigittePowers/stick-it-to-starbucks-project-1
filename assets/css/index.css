@@ -1,0 +1,42 @@
+:root {
+    --primary: #fff;
+    --secondary: #9caea9;
+    --tertiary: #788585;
+    --light-dark: #02bef7;
+    --dark: #012ab1;
+    --border-radius: .3rem;
+  }
+
+  * {
+      box-sizing: border-box
+  }
+
+  body {
+      background-color: var(--primary);
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: var(--dark);
+      line-height: 1.5;
+      font-size: 16px;
+  }
+
+  h3 {
+      font-weight: bold;
+      margin: 0;
+      color: var(--dark);
+      line-height: 1.25;
+  }
+
+  span {
+      font-size: 1em;
+  }
+
+  li:hover {
+      background-color: var(--light-dark);
+      text-decoration: underline;
+  }
+  
+  .block:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
