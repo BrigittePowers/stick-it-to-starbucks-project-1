@@ -1,0 +1,13 @@
+#map-section {
+      z-index: 999;
+      min-height: 200px;
+      position: relative;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-top: -100px;
+      background: whitesmoke;
+    }
+
+  
+  
+  

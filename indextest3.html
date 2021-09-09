@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/stylesheet3.css">
+    
     <title>Stick It To Starbucks</title>
 
 </head>
-<body style="background-image: url(assets/images/coffeebanner.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size: cover">
+<body style="background-image: url(assets/images/togocoffee.jpg); background-repeat:no-repeat;background-attachment: fixed; background-size: cover; background-position: center;">
     <section class="hero is-fullheight p-t-70">
         <div class="container">
             <div class="navbar-brand">
@@ -22,8 +23,9 @@
         <div class="hero-body" id="banner">
             <div class="container has-text-centered">
                 <div class="column is-10 is-offset-1">
-                    <h1 class="title has-text-white">Stick It To Starbucks</h1>
-                    <p class="subtitle has-text-white">When Local Fits, You S.I.T.S</p>
+                    <h1 class="title has-text-black">Stick It</h1>
+                    <h1 class="title has-text-black">To Starbucks</h1>
+                    <p class="subtitle has-text-black">When Local Fits, You S.I.T.S</p>
                 </div>
             </div>
         </div>
@@ -32,45 +34,30 @@
     
     <section id="search-section">
         <div class="container box-shadow">
-            <div class="column is-10 is-offset-1">
+            <div class="column is-11 is-offset-1">
                 <h1 class="title has-text-centered">Find A Local Coffee Shop Near You</h1>
 
                 <!-- Zip Code Text Input -->
-                <div class="field is-horizontal">
+                <div class="field is-4-horizontal">
                     <div class="control">
                         <input class="input" type="text" placeholder="Enter Zip Code">
                     </div>
 
                 <!-- Dropdown -->   
-                <div class="dropdown is-hoverable level is-mobile is-align-items-center">
-                    <div class="dropdown-trigger">
-                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>How Far Are You Willing To Go</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
+                    <div class="field">
+                        <label class="label">How Far Are You Willing To Travel?</label>
+                        <div class="control">
+                          <div class="select">
+                            <select>
+                              <option>5 Mile Radius</option>
+                              <option>10 Mile Radius</option>
+                              <option>15 Mile Radius</option>
+                              <option>20 Mile Radius</option>
+                              <option>25 Mile Radius</option>
+                            </select>
+                          </div>
+                        </div>
                     </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                      <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
-                          5 Mile Radius
-                        </a>
-                        <a class="dropdown-item">
-                          10 Mile Radius
-                        </a>
-                        <a href="#" class="dropdown-item is-active">
-                          15 Mile Radius
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          20 Mile Radius
-                        </a>
-                        <a href="#" class="dropdown-item">
-                          25 Mile Raduis  
-                        </a>
-                      </div>
-                    </div>
-                  </div>
                     <div class="control">
                         <button class="button is-primary">Search</button>
                     </div>
@@ -78,6 +65,73 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Map Section --> 
+    <section id="deals-section">
+        <div class="container box-shadow">
+            <div class="column is-10 is-offset-1">
+                <h2 class="title has-text-centered">What's Nearby</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-three-fifths is-offset-one-fifth">
+                    <div class="mapframe">
+                        <figure class="image is-3by2">
+                            <img src="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+    
+    <!-- Destination Section --> 
+    <section id="destination-section">
+        <div class="container has-text-centered">
+            <div class="column is-8 is-offset-2">
+                <h2 class="title">Top 3 Results</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="columns">
+                        <div class="column is-4">
+                            <div class="destination">
+                                <h4> Result 1</h4>
+                                <ul>
+                                    <li>Name:</li>
+                                    <li>Distance:</li>
+                                    <li>Travel Time:</li>
+                                    <li>Website:</li>
+                                </ul>
+                                <h4> Result 2</h4>
+                                <ul>
+                                    <li>Name:</li>
+                                    <li>Distance:</li>
+                                    <li>Travel Time:</li>
+                                    <li>Website:</li>
+                                </ul>
+                                <h4> Result 3</h4>
+                                <ul>
+                                    <li>Name:</li>
+                                    <li>Distance:</li>
+                                    <li>Travel Time:</li>
+                                    <li>Website:</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
     <section id="contact-section">
         <div class="container has-text-grey-dark">
             <div class="columns">
@@ -114,15 +168,17 @@
             </div>
         </div>
     </section>
+    <section>
         <footer>
             <div class="container">
                 <div class="columns has-text-grey-dark has-text-centered">
-                    <div class="column is-6">
+                    <div class="column is-12">
                      <p>Copyright © 2021. Made by B.D.J.</p>
                 </div>
             </div>
         </footer>
     </section>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="assets/js/index.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
