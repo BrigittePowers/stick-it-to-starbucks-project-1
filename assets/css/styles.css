@@ -1,0 +1,15 @@
+body,html{
+    min-height: 50%;
+}
+
+body{
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-image: url(coffee.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
