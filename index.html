@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <title>Stickin it to StarBucks!</title>
+
 </head>
 <body>
     <h1>When local fits you <strong!>SITS!</strong></h1>
@@ -16,11 +17,17 @@
     <label for="miles-selected">How far are you willing to go?:</label>
 <select name="miles-selected" id="miles-selected">
     <option value="5-miles">5 miles</option>
-  <option value="10-miles">10 miles</option>
-  <option value="15-miles">15 miles</option>
-  <option value="20-miles">20 miles</option>
+    <option value="10-miles">10 miles</option>
+    <option value="15-miles">15 miles</option>
+    <option value="20-miles">20 miles</option>
 </select>
 <div class="mapframe"></div>
+<!-- div element for map -->
+<div id="map"></div>
 </body>
 <script src="./assets/js/index.js"></script>
+<!-- script req for integrated map w markers -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk&callback=initMap">
+</script>
 </html>

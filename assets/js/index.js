@@ -1,9 +1,66 @@
+// API handles
 var serpAPIKey = "7fb7aa7e212bc49493c8e5edc8b5a97fe3ae2b0ddb576e59360860067a0a4455";
 var serpAPIUrl = "https://serpapi.com/search.json?engine=google&q=Coffee&api_key=";
-
 var googleAPIKey = "AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk";
-
 var mapsStaticAPI = "https://maps.googleapis.com/maps/api/staticmap?"; // + parameters
+
+// geolocation marker handles
+var locations = [
+    ['UserPosition', 34.052235, -118.243683],
+    ['Result1', 34.052235, -118.243683],
+    ['Result2', 33.849182, -118.388405],
+    ['Result3', 33.770050, -118.193739]
+];
+
+/*
+var infowindow = new google.maps.infowindow({});
+var marker, count;
+
+for (count = 0; count < locations.length; count++) {
+    marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[count][1], locations[count][2]), 
+        map: map,
+        title: locations[count][0]
+    });
+
+    google.maps.event.addListener(marker, 'click', (function (marker, count) {
+        return function () {
+            infowindow.setContent(locations[count][0]);
+            infowindow.open(map, marker);
+        }
+        }) (marker, count));
+}
+*/
+
+//feed into function: userPos, result1Pos, result2Pos, result3Pos
+function initMap() {
+    var center = {lat:34.052235, lng:-118.243683};
+    var offCenter = {lat:34.052235, lng:-118.343683};
+    var offCenter2 = {lat:34.052235, lng:-118.443683};
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: center
+    });  
+
+ //   var infowindow = new google.maps.infowindow({});
+    var marker, count;
+
+    for (count = 0; count < locations.length; count++) {
+    marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[count][1], locations[count][2]), 
+        map: map,
+        title: locations[count][0]
+    });
+
+    google.maps.event.addListener(marker, 'click', (function (marker, count) {
+        return function () {
+            infowindow.setContent(locations[count][0]);
+            infowindow.open(map, marker);
+        }
+        }) (marker, count));
+    }
+}
 
 // user loads the page
 
@@ -15,6 +72,8 @@ searchBtn.addEventListener("click", function(event){
     getLocation();
 });
 
+
+// == FEATURE: STATIC MAP ==
 function showLocation(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitutde;
@@ -40,7 +99,9 @@ function getLocation() {
     alert("Browser does not support geoelocation, sorry!");
     }
 }
+// == FEATURE: STATIC MAP ENDPOINT ==
 
+/* FEATURE TESTING, NOT REQUIRED
 // hide DOM element
 function hideElement(el) {
     el.style.display = 'none';
@@ -49,6 +110,7 @@ function hideElement(el) {
 function showElement(el) {
     el.style.display = 'block';
 }
+*/
 
 async function serpAPI() {
     var queryUrl = serpAPIUrl + serpAPIKey;
@@ -58,6 +120,9 @@ async function serpAPI() {
 
     console.log(data);
 }
+
+
+
 
 
 // banner header at top of page is STATIC and remains visible throughout site navigation
