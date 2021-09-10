@@ -12,6 +12,8 @@ var locations = [
     ['Result3', 33.770050, -118.193739]
 ];
 
+
+
 /*
 var infowindow = new google.maps.infowindow({});
 var marker, count;
@@ -69,7 +71,7 @@ var searchBtn = document.querySelector(".searchBtn");
 searchBtn.addEventListener("click", function(event){
     event.preventDefault();
 
-    getLocation();
+    initMap()
 });
 
 
@@ -99,6 +101,7 @@ function getLocation() {
     alert("Browser does not support geoelocation, sorry!");
     }
 }
+
 // == FEATURE: STATIC MAP ENDPOINT ==
 
 /* FEATURE TESTING, NOT REQUIRED
