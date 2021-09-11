@@ -17,3 +17,17 @@ h1, p {
 .mapframe a {
     color:blue;
 }
+
+h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 45px;
+    font-family: "Poppins", sans-serif;
+    display: block;
+}
+
+a {
+    color: #ffa200;
+}
