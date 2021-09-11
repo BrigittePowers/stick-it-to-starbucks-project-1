@@ -1,10 +1,11 @@
 // HTML handles
 var searchBtn = document.querySelector(".searchBtn");
 var select = document.getElementById("mileage");
+var destination = document.querySelector(".destination");
 
 // API handles
 var googleAPIKey = "AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk";
-var radius = 0;
+var searchRadius = 0;
 var map;
 var service;
 var infowindow;
@@ -45,20 +46,6 @@ function createMarker(place, map) {
     });
 }
 
-async function findCafe(lat, lng) {
-    /* var queryURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk&libraries=places" + "?location=" + lat + "%2C" + lng + "&radius=" + radius + "&type=cafe&key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk";
-
-    var response = await fetch(queryURL);
-    var data = await response.json();
-
-    console.log(data);
-    return data;
-    */
-
-    
-
-}
-
 function getMeters(i) {
     return i*1609.344;
 }
@@ -85,10 +72,11 @@ async function initMap() {
                 //locations[0][2] = pos.lng;
 
                 //var cafeData = findCafe();
-
+                
                 var request = {
-                    query: "Longhorn Cafe",
-                    fields: ["name", "geometry"],
+                    query: "coffee",
+                    fields: ["name", "formatted_address", "geometry", "icon", "place_id"],
+                    locationBias: {radius: searchRadius, center: {lat: pos.lat, lng: pos.lng}}
                 };
             
                 service = new google.maps.places.PlacesService(map)
@@ -97,6 +85,20 @@ async function initMap() {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i], map);
+
+                            //Result name 
+                            var resultName = document.createElement("h4");
+                            resultName.innerHTML = results[i].name;
+
+                            // Result info
+                            var resultInfo = document.createElement("ul");
+                            var resultAddress = document.createElement("li");
+                            resultAddress.innerHTML = results[i].formatted_address;
+
+                            // Append
+                            resultInfo.appendChild(resultAddress);
+                            destination.appendChild(resultName);
+                            destination.appendChild(resultInfo);
                         }
                     }
                 });
@@ -142,7 +144,7 @@ searchBtn.addEventListener("click", function(event){
 
     //read distance dropdown box and convert to meters
     var miles = select.value;
-    radius = getMeters(miles);
+    searchRadius = getMeters(miles);
 
     //initMap should be last on the event listener after data is plugged into variables
     initMap();
