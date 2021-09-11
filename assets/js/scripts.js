@@ -5,6 +5,10 @@ var select = document.getElementById("mileage");
 // API handles
 var googleAPIKey = "AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk";
 var radius = 0;
+var map;
+var service;
+var infowindow;
+
 
 //list of franchises to remove from search
 var corporateCoffee = ["Starbucks", "Costa Coffee", "Tim Hortons", "Dunkin Donuts", "Dunkin", "Peet's Coffee", "Tully's", "McDonald's", "McCafe", "Tealicious Cafe", "Shipley Do-Nuts", "Panera Bread"];
@@ -23,14 +27,36 @@ var locations = [
     ['Result 3', 33.628342, -117.927933],
 ];
 
+function createMarker(place, map) {
+    if (!place.geometry || !place.geometry.location) return;
+
+    const marker = new google.maps.Marker({
+        map,
+        position: place.geometry.location,
+    });
+
+    google.maps.event.addListener(marker, "click", () => {
+        infowindow.setContent(place.name || "");
+        infowindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+        });
+    });
+}
+
 async function findCafe(lat, lng) {
-    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" + "?location=" + lat + "%2C" + lng + "&radius=" + radius + "&type=cafe&key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk";
+    /* var queryURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk&libraries=places" + "?location=" + lat + "%2C" + lng + "&radius=" + radius + "&type=cafe&key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk";
 
     var response = await fetch(queryURL);
     var data = await response.json();
 
     console.log(data);
     return data;
+    */
+
+    
+
 }
 
 function getMeters(i) {
@@ -38,9 +64,11 @@ function getMeters(i) {
 }
 
 //create the map using var LOCATIONS
-async function initMap(dist) {
+async function initMap() {
 
-    var map = new google.maps.Map(document.querySelector('.mapframe'), {
+    infowindow = new google.maps.InfoWindow();
+
+    map = new google.maps.Map(document.querySelector('.mapframe'), {
         zoom: 10,
     });  
 
@@ -53,18 +81,35 @@ async function initMap(dist) {
                 };
                 map.setCenter(pos);
 
-                locations[0][1] = pos.lat;
-                locations[0][2] = pos.lng;
+                //locations[0][1] = pos.lat;
+                //locations[0][2] = pos.lng;
 
-                var cafeData = findCafe(pos.lat, pos.lng);
+                //var cafeData = findCafe();
+
+                var request = {
+                    query: "Longhorn Cafe",
+                    fields: ["name", "geometry"],
+                };
+            
+                service = new google.maps.places.PlacesService(map)
+
+                service.findPlaceFromQuery(request, function(results, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            createMarker(results[i], map);
+                        }
+                    }
+                });
+                
 
             },
             () => {
                 handleLocationError(true, infoWindow, map.getCenter());
             }
-            );
-
-        var infowindow = new google.maps.InfoWindow({});
+        );
+        
+        /*
+        
         var marker, count;
         
         for (count = 0; count < locations.length; count++) {
@@ -81,11 +126,12 @@ async function initMap(dist) {
                 }
             })(marker, count));
         }
+        */
 
-        } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter());
-        }
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
 }
 
 // user loads the page
@@ -142,5 +188,3 @@ searchBtn.addEventListener("click", function(event){
         // price (?)
 
 // back button to return to results
-
-// below the 3 viewable results will be a link to the google search on google.com to view full results
