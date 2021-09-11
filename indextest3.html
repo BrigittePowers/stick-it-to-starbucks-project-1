@@ -37,32 +37,26 @@
     <section id="search-section">
         <div class="container box-shadow is-justify-content-center">
             <div class="column is-11 is-offset-1">
-                <h2 class="title has-text-centered">Find A Local Coffee Shop Near You</h1>
-
-                <!-- Zip Code Text Input -->
-                <div class="field is-centered">
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Enter Zip Code"id="zipCode">
-                    </div>
+                <h2 class="title has-text-centered">Find A Local Coffee Shop Near You</h2>
 
                 <!-- Dropdown -->   
-                    <div class="field is-justify-content-center">
-                        <label class="label">How Far Are You Willing To Travel?</label>
-                        <div class="control is-centered">
-                          <div class="select">
-                            <select>
-                              <option>5 Mile Radius</option>
-                              <option>10 Mile Radius</option>
-                              <option>15 Mile Radius</option>
-                              <option>20 Mile Radius</option>
-                              <option>25 Mile Radius</option>
+                <div class="field is-8 is-offset-2">
+                    <label class="label">How Far Are You Willing To Go?</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="mileage">
+                            <option value="5">5 Mile Radius</option>
+                            <option value="10">10 Mile Radius</option>
+                            <option value="15">15 Mile Radius</option>
+                            <option value="20">20 Mile Radius</option>
+                            <option value="25">25 Mile Radius</option>
                             </select>
-                          </div>
                         </div>
                     </div>
-                    <div class="control is is-centered">
-                        <button class="button is-primary is-centered" id="searchBtn">Search</button>
-                    </div>
+                </div>
+                <div class="control">
+                    <button class="button is-primary searchBtn" id="searchBtn">Search</button>
+                </div>
                     <button class="button is-primary is-centered" type="button" id="clear-history">Clear History</button>
                         <ul class="list-group"></ul>
                 </div>
@@ -80,49 +74,19 @@
         </div>
         <div class="container">
             <div class="columns">
-                <div class="column is-12">
-                    <div class="map">
-                        <figure class="image is-3by2">
-                            <img src="mapframe">
-                        </figure>
+                <div class="column is-8 is-offset-2">
+                    <div class="mapframe">
+                        <figure class="image is-3by2"></figure>
                     </div>
-                    <div class="colum is-6">
+                    <div class="column is-12 is-offset-2">
                         <div class="columns">
-                            <div class="column">
-                                <div class="destination">
-                                    <h4> Result 1</h4>
-                                    <ul>
-                                        <li>Name:</li>
-                                        <li>Distance:</li>
-                                        <li>Travel Time:</li>
-                                        <li>Website:</li>
-                                    </ul>
-                                </div>    
-                                <div class="destination">
-                                    <h4> Result </h4>
-                                    <ul>
-                                        <li>Name:</li>
-                                        <li>Distance:</li>
-                                        <li>Travel Time:</li>
-                                        <li>Website:</li>
-                                    </ul>
-                                </div> 
-                                <div class="destination">
-                                    <h4> Result 3</h4>
-                                    <ul>
-                                        <li>Name:</li>
-                                        <li>Distance:</li>
-                                        <li>Travel Time:</li>
-                                        <li>Website:</li>
-                                    </ul>
-                                </div> 
+                            <div class="column is-10">
+                                <div class="results"></div>
                             </div>
                         </div>
-                        <div class="columns">
-                            <div class="column">
-                                <a class="button is-primary" href="">View All</a>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="column is-12 is-offset-5">
+                        <button class="button is-primary viewAll" id="viewAll">View All</button>
                     </div>
                 </div>
             </div>
@@ -181,8 +145,8 @@
     <script type="text/javascript" src="assets/js/index.js"></script>
     <script type="text/javascript" src="assets/js/index3.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk&libraries=places"></script>
+
 
 </body>
 </html>

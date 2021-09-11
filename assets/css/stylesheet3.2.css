@@ -4,3 +4,16 @@ h1, p {
     margin-bottom: 75px; 
 }
 
+#destination-section {
+    position: relative;
+}
+
+.mapframe {
+    height: 400px;
+    width: 100%;
+    background-color: grey;
+    color: black;
+}
+.mapframe a {
+    color:blue;
+}
