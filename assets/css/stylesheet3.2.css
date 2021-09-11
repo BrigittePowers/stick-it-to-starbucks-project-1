@@ -13,3 +13,7 @@ h1, p {
 .mapframe a {
     color:blue;
 }
+
+#destination-section {
+    display: none;
+}

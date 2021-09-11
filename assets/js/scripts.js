@@ -2,6 +2,8 @@
 var searchBtn = document.querySelector(".searchBtn");
 var select = document.getElementById("mileage");
 var resultsDisplay = document.querySelector(".results");
+var resultsTitle = document.querySelector(".results-title");
+var resultsWrap = document.getElementById("destination-section");
 
 // API handles
 var googleAPIKey = "AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk";
@@ -57,8 +59,7 @@ function callback(results, status) {
             rName.innerHTML = filterArr[i].name;
             rVicinity.innerHTML = filterArr[i].vicinity;
             rDirections.innerHTML = "<a href='" + 'https://www.google.com/maps?saddr=My+Location&daddr=' + filterArr[i].geometry.location.lat() + '%2C' + filterArr[i].geometry.location.lng() + "'>Get Directions</a>";
-            //rLink.href = 'https://www.google.com/maps?saddr=My+Location&daddr=' + filterArr[i].geometry.location.lat() + '%2C' + filterArr[i].geometry.location.lng();
-
+            
             // append results to list
             rList.appendChild(rVicinity);
             rList.appendChild(rDirections);
@@ -70,14 +71,23 @@ function callback(results, status) {
 
 
         // offer the remaining results with VIEW ALL link
+        var rFullList = document.createElement('button');
+        rFullList.innerHTML = "View All Results";
+        resultsDisplay.appendChild(rFullList);
         
         //console log data
         console.log(results);
 
+        //user clicks SEARCH, search parameters saved to variables
+        rFullList.addEventListener("click", function(event){
+            event.preventDefault();
+
+            showFullResults(); // not written yet
+        });
+
     } else // places service status not working
         console.log("API Server is currently unreachable");
 }
-
 
 // creates waypoints
 function createMarker(place, map) {
@@ -106,6 +116,8 @@ function getMeters(i) {
 // create the map & results page
 async function initMap() {
 
+    
+
     infowindow = new google.maps.InfoWindow();
 
     map = new google.maps.Map(document.querySelector('.mapframe'), {
@@ -115,6 +127,10 @@ async function initMap() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
+
+                resultsWrap.style.display = "block";
+                resultsTitle.innerHTML = "<h2 class='title'>Top 3 Results</h2>";
+
                 const pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
