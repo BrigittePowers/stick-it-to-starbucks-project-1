@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <h1>localStorage</h1>
+    <textarea id="myTextarea" rows="2" cols="20"></textarea>
+    <p></p>
+    <button onclick="mySave()">Save</button>
+    <button onclick="mySearch()">Search</button>
+    <button onclick="myClear()">Clear</button>
+    <script>
+      function mySave() {
+        var myContent = document.getElementById("myTextarea").value;
+        localStorage.setItem("myContent", myContent);
+      }
+      function mySearch() {
+        var myContent = localStorage.getItem("myContent");
+        document.getElementById("myTextarea").value = myContent;
+      }
+      function myClear(){
+          var myContent = localStorage.clear("myContent");
+          localStorage.clear("myContent", myContent);
+      }
+    </script>
+  </body>
+</html>
