@@ -36,24 +36,17 @@
         <div class="container box-shadow">
             <div class="column is-11 is-offset-1">
                 <h2 class="title has-text-centered">Find A Local Coffee Shop Near You</h1>
-
-                <!-- Zip Code Text Input -->
-                <div class="field is-4-horizontal">
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Enter Zip Code">
-                    </div>
-
                 <!-- Dropdown -->   
                     <div class="field">
-                        <label class="label">How Far Are You Willing To Travel?</label>
+                        <label class="label">How Far Are You Willing To Go?</label>
                         <div class="control">
                             <div class="select">
-                                <select>
-                                <option>5 Mile Radius</option>
-                                <option>10 Mile Radius</option>
-                                <option>15 Mile Radius</option>
-                                <option>20 Mile Radius</option>
-                                <option>25 Mile Radius</option>
+                                <select id="mileage">
+                                <option value="5">5 Mile Radius</option>
+                                <option value="10">10 Mile Radius</option>
+                                <option value="15">15 Mile Radius</option>
+                                <option value="20">20 Mile Radius</option>
+                                <option value="25">25 Mile Radius</option>
                                 </select>
                             </div>
                         </div>
@@ -164,8 +157,10 @@
             </div>
         </footer>
     </section>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script type="text/javascript" src="assets/js/index.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk"></script>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk&libraries=places&callback=initMap"></script>
+
+    <script type="text/javascript" src="./assets/js/scripts.js"></script>
 </body>
 </html>

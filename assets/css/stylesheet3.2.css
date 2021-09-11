@@ -7,4 +7,9 @@ h1, p {
     height: 400px;
     width: 100%;
     background-color: grey;
+    color: black;
+}
+
+.mapframe a {
+    color:blue;
 }
