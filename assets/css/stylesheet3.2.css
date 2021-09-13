@@ -1,0 +1,39 @@
+h1 {
+    font-family: 'Rock Salt', cursive;
+    position: relative;
+    margin-bottom: 75px; 
+}
+
+#destination-section {
+    position: relative;
+    display: none;
+}
+
+.mapframe {
+    height: 400px;
+    width: 100%;
+    background-color: grey;
+    color: black;
+}
+.mapframe a {
+    color:blue;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 45px;
+    font-family: "Poppins", sans-serif;
+    display: block;
+}
+
+a {
+    color: #ffa200;
+}
+
+#contact-section p {
+    font-family: 'Rock Salt', cursive;
+    position: relative;
+}

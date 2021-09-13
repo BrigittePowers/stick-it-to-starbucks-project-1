@@ -4,22 +4,155 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles.css">
-    <title>Stickin it to StarBucks!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/stylesheet3.css">
+    <link rel="stylesheet" href="assets/css/stylesheet3.2.css">
+
+    <title>Stick It To Starbucks</title>
+
 </head>
-<body>
-    <h1>When local fits you <strong!>SITS!</strong></h1>
-    <form id="form">
-        <input type="search" id="qurey" name="q" placeholder="Zip Code...">
-        <button>search</button>
-    </form>
-    <label for="miles-selected">How far are you willing to go?:</label>
-<select name="miles-selected" id="miles-selected">
-    <option value="5-miles">5 miles</option>
-  <option value="10-miles">10 miles</option>
-  <option value="15-miles">15 miles</option>
-  <option value="20-miles">20 miles</option>
-</select>
+<body style="background-image: url(assets/images/togocoffee.jpg); background-repeat:no-repeat;background-attachment: fixed; background-size: cover; background-position: center;">
+    <section class="hero is-fullheight p-t-70">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="../">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
+            </div>
+        </div>
+        <div class="hero-body" id="banner">
+            <div class="container has-text-centered">
+                <div class="column is-10 is-offset-1">
+                    <p class="subtitle has-text-black">When Local Fits, You <strong>S.I.T.S.!</strong></p>
+                    <h1 class="title has-text-black">Stick It</h1>
+                    <h1 class="title has-text-black">To</h1>
+                    <h1 class="title has-text-black">Starbucks</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="search-section">
+        <div class="container box-shadow is-justify-content-center">
+            <div class="column is-11 is-offset-1">
+                <h2 class="title has-text-centered"></h2>
+                <p class="title has-text-centered personal-greeting"></p>
+
+                <!-- Local Storage -->   
+                <form class="field">
+                    <div class="remember">
+                        <label for="entername">Enter your name:</label>
+                        <input class="input" id="entername" type="text" placeholder="Enter your Name" required>
+                        <input class="button is-primary is-medium" id="submitname" type="submit" value="Say hello">
+                    </div>
+                    <div class="forget column is-12 is-offset-2">
+                        <label for="forgetname">Want us to forget you?</label>
+                        <input class="button is-primary" id="forgetname" type="reset" value="Want us to forget you?">
+                    </div>
+                </form>
+                
+                <!-- Dropdown -->   
+                    <div class="field">
+                        <label class="label has-text-centered">How Far Are You Willing To Travel?</label>
+                        <div class="column is-12 is-offset-4">
+                            <div class="select">
+                                <select id="mileage">
+                                <option value="5">5 Mile Radius</option>
+                                <option value="10">10 Mile Radius</option>
+                                <option value="15">15 Mile Radius</option>
+                                <option value="20">20 Mile Radius</option>
+                                <option value="25">25 Mile Radius</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-12 is-offset-4">
+                        <button class="button is-primary is-medium searchBtn" id="searchBtn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destination Section --> 
+    <section id="destination-section">
+        <div class="container has-text-centered">
+            <div class="column is-8 is-offset-2">
+                <div class="results-title">Top 3 Results</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8 is-offset-2">
+                    <div class="mapframe">
+                        <figure class="image is-3by2"></figure>
+                    </div>
+                    <div class="column is-12 is-offset-2">
+                        <div class="columns">
+                            <div class="column is-10">
+                                <div class="results"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-12 is-offset-5">
+                        <button class="button is-primary viewAll" id="viewAll">View All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section">
+        <div class="container has-text-grey-dark">
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="widgets">
+                        <h4 class="has-text-grey-dark">CONTACT US</h4>
+                        <p>We hope you've enjoyed our app! Tell your friends!</p>
+                        <ul class="p-t-15">
+                            <li>
+                                <b>Ph: </b>
+                                123-456-7890
+                            </li>
+                            <li>
+                                <b>Email: </b>
+                                info@sits.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="widgets">
+                        <h4 class="has-text-grey-dark">Newsletter</h4>
+                        <p>Sign up for our newletter list to get inside pour on new locations and specials</p>
+                        <div class="field is-grouped m-t-25">
+                            <p class="control is-expanded">
+                                <input class="input" type="text" placeholder="Enter your Email">
+                            </p>
+                            <p class="control">
+                                <a class="button is-primary has-text-weight-bold">Enter</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <footer>
+            <div class="container">
+                <div class="columns has-text-grey-dark has-text-centered">
+                    <div class="column is-12">
+                        <p>Copyright © 2021. Made by B.D.J.</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk&libraries=places"></script>
+    <script type="text/javascript" src="./assets/js/scripts.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
