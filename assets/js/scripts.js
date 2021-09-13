@@ -52,6 +52,8 @@ function showFullResults() {
     for (i= 3; i < filterArr.length; i++) {
         createMarker(filterArr[i], map);
 
+        resultsTitle.innerHTML = "<h2 class='title'>Showing All Results</h2>";
+
         // create elements
         var rName = document.createElement('h4');
         var rList = document.createElement('ul');
@@ -223,14 +225,17 @@ function nameDisplayCheck() {
         let name = localStorage.getItem('name');
         h2.textContent = 'Hi, ' + name;
         personalGreeting.textContent = 'Let Us Find A Local Coffee Shop For You!';
+
       // hide the 'remember' part of the form and show the 'forget' part
         forgetDiv.style.display = 'block';
         rememberDiv.style.display = 'none';
+
     } else {
     // if not, display generic greeting
         h2.textContent = 'Hi there! ';
         personalGreeting.textContent = 'Let Us Find A Local Coffee Shop For You';
-    // hide the 'forget' part of the form and show the 'remember' part
+    
+        // hide the 'forget' part of the form and show the 'remember' part
         forgetDiv.style.display = 'none';
         rememberDiv.style.display = 'block';
     }

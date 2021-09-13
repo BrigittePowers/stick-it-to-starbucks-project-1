@@ -35,8 +35,8 @@
 
     
     <section id="search-section">
-        <div class="container box-shadow is-justify-content-center">
-            <div class="column is-11 is-offset-1">
+        <div class="container box-shadow is-flex is-justify-content-center">
+            <div class="column is-11">
                 <h2 class="title has-text-centered"></h2>
                 <p class="title has-text-centered personal-greeting"></p>
 
@@ -47,16 +47,12 @@
                         <input class="input" id="entername" type="text" placeholder="Enter your Name" required>
                         <input class="button is-primary is-medium" id="submitname" type="submit" value="Say hello">
                     </div>
-                    <div class="forget column is-12 is-offset-2">
-                        <label for="forgetname">Want us to forget you?</label>
-                        <input class="button is-primary" id="forgetname" type="reset" value="Want us to forget you?">
-                    </div>
                 </form>
                 
                 <!-- Dropdown -->   
                     <div class="field">
                         <label class="label has-text-centered">How Far Are You Willing To Travel?</label>
-                        <div class="column is-12 is-offset-4">
+                        <div class="column is-12 has-text-centered">
                             <div class="select">
                                 <select id="mileage">
                                 <option value="5">5 Mile Radius</option>
@@ -68,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="column is-12 is-offset-4">
+                    <div class="column is-12 has-text-centered">
                         <button class="button is-primary is-medium searchBtn" id="searchBtn">Search</button>
                     </div>
                 </div>
@@ -135,6 +131,9 @@
                             <p class="control">
                                 <a class="button is-primary has-text-weight-bold">Enter</a>
                             </p>
+                        </div>
+                        <div class="forget column is-12">
+                            <input class="button is-primary" id="forgetname" type="reset" value="Want us to forget you?">
                         </div>
                     </div>
                 </div>
