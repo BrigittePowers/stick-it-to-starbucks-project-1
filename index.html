@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/stylesheet3.css">
     <link rel="stylesheet" href="assets/css/stylesheet3.2.css">
+
     <title>Stick It To Starbucks</title>
 
 </head>
@@ -23,9 +24,10 @@
         <div class="hero-body" id="banner">
             <div class="container has-text-centered">
                 <div class="column is-10 is-offset-1">
+                    <p class="subtitle has-text-black">When Local Fits, You <strong>S.I.T.S.!</strong></p>
                     <h1 class="title has-text-black">Stick It</h1>
-                    <h1 class="title has-text-black">To Starbucks</h1>
-                    <p class="subtitle has-text-black">When Local Fits, You <strong!>S.I.T.S.!</strong></p>
+                    <h1 class="title has-text-black">To</h1>
+                    <h1 class="title has-text-black">Starbucks</h1>
                 </div>
             </div>
         </div>
@@ -33,13 +35,28 @@
 
     
     <section id="search-section">
-        <div class="container box-shadow">
+        <div class="container box-shadow is-justify-content-center">
             <div class="column is-11 is-offset-1">
-                <h2 class="title has-text-centered">Find A Local Coffee Shop Near You</h1>
+                <h2 class="title has-text-centered"></h2>
+                <p class="title has-text-centered personal-greeting"></p>
+
+                <!-- Local Storage -->   
+                <form class="field">
+                    <div class="remember">
+                        <label for="entername">Enter your name:</label>
+                        <input class="input" id="entername" type="text" placeholder="Enter your Name" required>
+                        <input class="button is-primary is-medium" id="submitname" type="submit" value="Say hello">
+                    </div>
+                    <div class="forget column is-12 is-offset-2">
+                        <label for="forgetname">Want us to forget you?</label>
+                        <input class="button is-primary" id="forgetname" type="reset" value="Want us to forget you?">
+                    </div>
+                </form>
+                
                 <!-- Dropdown -->   
                     <div class="field">
-                        <label class="label">How Far Are You Willing To Go?</label>
-                        <div class="control">
+                        <label class="label has-text-centered">How Far Are You Willing To Travel?</label>
+                        <div class="column is-12 is-offset-4">
                             <div class="select">
                                 <select id="mileage">
                                 <option value="5">5 Mile Radius</option>
@@ -51,39 +68,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="control">
-                        <button class="button is-primary searchBtn">Search</button>
+                    <div class="column is-12 is-offset-4">
+                        <button class="button is-primary is-medium searchBtn" id="searchBtn">Search</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
     <!-- Destination Section --> 
     <section id="destination-section">
         <div class="container has-text-centered">
             <div class="column is-8 is-offset-2">
-                <div class="results-title"></div>
+                <div class="results-title">Top 3 Results</div>
             </div>
         </div>
         <div class="container">
             <div class="columns">
-                <div class="column is-6" >
-                    <div class="mapframe"></div>
-                    <div class="colum is-6">
+                <div class="column is-8 is-offset-2">
+                    <div class="mapframe">
+                        <figure class="image is-3by2"></figure>
+                    </div>
+                    <div class="column is-12 is-offset-2">
                         <div class="columns">
-                            <div class="column is-4">
+                            <div class="column is-10">
                                 <div class="results"></div>
                             </div>
                         </div>
+                    </div>
+                    <div class="column is-12 is-offset-5">
+                        <button class="button is-primary viewAll" id="viewAll">View All</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <section id="contact-section">
         <div class="container has-text-grey-dark">
@@ -113,7 +132,7 @@
                                 <input class="input" type="text" placeholder="Enter your Email">
                             </p>
                             <p class="control">
-                                <a class="button is-primary has-text-weight-bold">Submit</a>
+                                <a class="button is-primary has-text-weight-bold">Enter</a>
                             </p>
                         </div>
                     </div>
@@ -121,6 +140,7 @@
             </div>
         </div>
     </section>
+
     <section>
         <footer>
             <div class="container">
@@ -133,7 +153,6 @@
     </section>
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk&libraries=places"></script>
-    <!-- testing above feature <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtojOrOmevqFcBO6zPY4W3rdfluhyMWpk"></script> -->
     <script type="text/javascript" src="./assets/js/scripts.js"></script>
 </body>
 </html>
