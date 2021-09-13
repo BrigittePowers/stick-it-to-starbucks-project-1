@@ -1,5 +1,6 @@
 // HTML handles
 var searchBtn = document.querySelector(".searchBtn");
+var viewBtn = document.getElementById("viewAll");
 var select = document.getElementById("mileage");
 var resultsDisplay = document.querySelector(".results");
 var resultsTitle = document.querySelector(".results-title");
@@ -26,7 +27,7 @@ var filterArr = [];
 
 
 //list of franchises to remove from search
-var franchiseFilter = ["Starbucks", "Costa Coffee", "Tim Hortons", "Dunkin Donuts", "Dunkin", "Peet's Coffee", "Tully's", "McDonald's", "McCafe", "Tealicious Cafe", "Shipley Do-Nuts", "Panera Bread", "Barnes & Noble"];
+var franchiseFilter = ["Starbucks", "Costa Coffee", "Tim Hortons", "Dunkin Donuts", "Dunkin", "Dunkin", "Dunk'n Donuts", "Peet's Coffee", "Tully's", "McDonald's", "McCafe", "Tealicious Cafe", "Shipley Do-Nuts", "Panera Bread", "Barnes & Noble"];
 
 //user clicks SEARCH, search parameters saved to variables
 searchBtn.addEventListener("click", function(event){
@@ -40,6 +41,37 @@ searchBtn.addEventListener("click", function(event){
     initMap();
 });
 
+viewBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    showFullResults();
+});
+
+function showFullResults() {
+    //0 1 2 already displayed
+    for (i= 3; i < filterArr.length; i++) {
+        createMarker(filterArr[i], map);
+
+        // create elements
+        var rName = document.createElement('h4');
+        var rList = document.createElement('ul');
+        var rVicinity = document.createElement('li');
+        var rDirections = document.createElement('li');
+
+        // set element data
+        rName.innerHTML = filterArr[i].name;
+        rVicinity.innerHTML = filterArr[i].vicinity;
+        rDirections.innerHTML = "<a href='" + 'https://www.google.com/maps?saddr=My+Location&daddr=' + filterArr[i].geometry.location.lat() + '%2C' + filterArr[i].geometry.location.lng() + "'>Get Directions</a>";
+
+        // append results to list
+        rList.appendChild(rVicinity);
+        rList.appendChild(rDirections);
+
+        // show elements on results div
+        resultsDisplay.appendChild(rName);
+        resultsDisplay.appendChild(rList);
+    }
+}
 
 // == FUNCTIONS (a-z)==
 
@@ -82,13 +114,6 @@ function callback(results, status) {
         
         //console log data
         console.log(results);
-
-        //user clicks VIEW ALL, search parameters saved to variables
-        rFullList.addEventListener("click", function(event){
-            event.preventDefault();
-
-            showFullResults(); // not written yet
-        });
 
     } else // places service status not working
         console.log("API Server is currently unreachable");
@@ -166,7 +191,7 @@ async function initMap() {
     }
 }
 
-// LOCAL STORAGE
+// = LOCAL STORAGE =
 // Stop the form from submitting when a button is pressed
 form.addEventListener('submit', function(e) {
     e.preventDefault();
