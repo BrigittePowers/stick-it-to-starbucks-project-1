@@ -37,11 +37,25 @@
     <section id="search-section">
         <div class="container box-shadow is-justify-content-center">
             <div class="column is-11 is-offset-1">
-                <h2 class="title has-text-centered">Find A Local Coffee Shop Near You</h2>
+                <h2 class="title has-text-centered"></h2>
+                <p class="title has-text-centered personal-greeting"></p>
 
-                <!-- Dropdown -->   
+                <!-- Local Storage -->   
+                <form class="field">
+                    <div class="remember">
+                      <label for="entername">Enter your name:</label>
+                      <input class="input" id="entername" type="text" placeholder="Enter your Name" required>
+                      <input class="button is-primary is-medium" id="submitname" type="submit" value="Say hello">
+                    </div>
+                    <div class="forget column is-12 is-offset-2">
+                      <label for="forgetname">Want us to forget you?</label>
+                      <input class="button is-primary" id="forgetname" type="reset" value="Want us to forget you?">
+                    </div>
+                  </form>
+
+                 <!-- Dropdown --> 
                 <div class="field">
-                    <label class="label column is-12 is-offset-4">How Far Are You Willing To Go?</label>
+                    <label class="label has-text-centered">How Far Are You Willing To Travel?</label>
                     <div class="column is-12 is-offset-4">
                         <div class="select">
                             <select id="mileage">
@@ -56,10 +70,6 @@
                 </div>
                 <div class="column is-12 is-offset-4">
                     <button class="button is-primary is-medium searchBtn" id="searchBtn">Search</button>
-                </div>
-                <div class="column is-12 is-offset-4">
-                        <button class="button is-primary is-medium" type="button" id="clear-history">Clear History</button>
-                        <ul class="list-group"></ul>
                 </div>
             </div>
         </div>
@@ -124,7 +134,7 @@
                                 <input class="input" type="text" placeholder="Enter your Email">
                             </p>
                             <p class="control">
-                                <a class="button is-primary has-text-weight-bold">Submit</a>
+                                <a class="button is-primary has-text-weight-bold">Enter</a>
                             </p>
                         </div>
                     </div>

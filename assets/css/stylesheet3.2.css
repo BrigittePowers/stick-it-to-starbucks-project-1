@@ -1,4 +1,4 @@
-h1, p {
+h1 {
     font-family: 'Rock Salt', cursive;
     position: relative;
     margin-bottom: 75px; 
@@ -30,4 +30,9 @@ h4 {
 
 a {
     color: #ffa200;
+}
+
+#contact-section p {
+    font-family: 'Rock Salt', cursive;
+    position: relative;
 }
