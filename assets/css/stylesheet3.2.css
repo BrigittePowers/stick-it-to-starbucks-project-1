@@ -37,3 +37,10 @@ a {
     font-family: 'Rock Salt', cursive;
     position: relative;
 }
+
+@media (max-width: 500px){
+    .main-title {
+        font-size: 10vw;
+        font-weight: 900;
+    }
+}
