@@ -20,14 +20,22 @@ the local community.
 The Gen Z and Millennial demographic group make up the majority
 of the world's coffee drinkers.
 
-QUALITY - For this group, quality trumps quantity
-TRAVEL - More likely to drink coffee outside the home
-INNOVATION - Willing to spend more $$$ on a complex/innovative drink
-DESTINATION - Willing to travel to find quaint destination
-EXPERIENCE - Seeks genuine community-oriented experience
-SUPPORT LOCAL - Prefers to support local, small business vs chain
-SUSTAINABILITY - Identify with values geared towards sustainable practices 
-AUTHENTICITY - Seek genuine products/services that share in creating genuine experiences
+> QUALITY - For this group, quality trumps quantity
+> 
+> TRAVEL - More likely to drink coffee outside the home
+> 
+> INNOVATION - Willing to spend more $$$ on a complex/innovative drink
+> 
+> DESTINATION - Willing to travel to find quaint destination
+> 
+> EXPERIENCE - Seeks genuine community-oriented experience
+> 
+> SUPPORT LOCAL - Prefers to support local, small business vs chain
+> 
+> SUSTAINABILITY - Identify with values geared towards sustainable practices 
+> 
+> AUTHENTICITY - Seek genuine products/services that share in creating genuine experiences
+> 
 
 
 ## User Story
