@@ -27,11 +27,16 @@ var filterArr = [];
 
 
 //list of franchises to remove from search
-var franchiseFilter = ["Starbucks", "Costa Coffee", "Tim Hortons", "Dunkin Donuts", "Dunkin", "Dunkin", "Dunk'n Donuts", "Peet's Coffee", "Tully's", "McDonald's", "McCafe", "Tealicious Cafe", "Shipley Do-Nuts", "Panera Bread", "Barnes & Noble"];
+var franchiseFilter = ["Starbucks", "Costa Coffee", "Tim Hortons", "Dunkin Donuts", "Dunkin", "Dunkin", "Dunkin'", "Dunk'n Donuts", "Peet's Coffee", "Tully's", "McDonald's", "McCafe", "Tealicious Cafe", "Shipley Do-Nuts", "Panera Bread", "Barnes & Noble"];
 
 //user clicks SEARCH, search parameters saved to variables
 searchBtn.addEventListener("click", function(event){
     event.preventDefault();
+
+    resultsDisplay.innerHTML = "";
+
+    viewBtn.style.display = 'block';
+
 
     //read distance dropdown box and convert to meters
     var miles = select.value;
@@ -44,11 +49,14 @@ searchBtn.addEventListener("click", function(event){
 viewBtn.addEventListener("click", function(event) {
     event.preventDefault();
 
+    viewBtn.style.display = 'none';
+
     showFullResults();
 });
 
 function showFullResults() {
     //0 1 2 already displayed
+
     for (i= 3; i < filterArr.length; i++) {
         createMarker(filterArr[i], map);
 
