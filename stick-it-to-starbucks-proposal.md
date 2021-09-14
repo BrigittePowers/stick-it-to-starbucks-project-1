@@ -51,7 +51,7 @@ and navigate to the location of my choice.
 ## APIs and Framework
 | API/Framework | Documentation |
 | ------ | ------ |
-| Places API | [https://developers.google.com/maps/documentation/places/web-service/overview] | 
+| Places API | [https://tinyurl.com/8dyt2ts] | 
 | Google Maps API | [https://developers.google.com/maps?csw=1] |
 | BULMI.io | [https://bulma.io/] |
 
