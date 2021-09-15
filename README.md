@@ -61,6 +61,7 @@ and navigate to the location of my choice.
 | ------ | ------ |
 | Places API | [https://tinyurl.com/8dyt2ts] | 
 | Google Maps API | [https://developers.google.com/maps?csw=1] |
+| Navigator API | |
 | BULMI.io | [https://bulma.io/] |
 
 ## DEMO
