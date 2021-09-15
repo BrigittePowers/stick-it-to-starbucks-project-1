@@ -1,12 +1,6 @@
 # Stick it to Starbucks
 ## _When local business fits, you S.I.T.S._
 
-
-The goal of this project is to develop an application that
-will provide information about nearby local coffee shops as an
-alternative to _another_ Starbucks run.
-
-
 ## Elevator Pitch
 
 The goal of this project was to develop an application that will provide 
