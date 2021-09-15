@@ -67,5 +67,7 @@ and navigate to the location of my choice.
 ## DEMO
 Live demo can be viewed at: https://brigittepowers.github.io/stick-it-to-starbucks-project-1/
 
+Project Pitch can be viewed at: https://docs.google.com/presentation/d/1wXJnVycMjxWEhhp1T4eBhVhfA9tkLxAKMvuQlNRj1z0/edit#slide=id.gef04c22053_0_926
+
 ![40caae7dc0](https://user-images.githubusercontent.com/86506686/133175192-2ec1c112-3f0b-4bd9-be2d-ea04cc90c6db.jpg)
 
